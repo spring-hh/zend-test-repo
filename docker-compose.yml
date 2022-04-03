@@ -1,0 +1,12 @@
+version: '3.9'
+services: 
+  web:
+    build: "./docker"
+    container_name: "centos"
+    ports:
+      - 80:80
+    volumes:
+      - "./html:/var/www/html"
+      - "./sample.localhost.conf:/etc/httpd/conf.d/sample.localhost.conf"
+    privileged: true
+    platform: linux/x86_64
